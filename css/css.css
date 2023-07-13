@@ -1,0 +1,139 @@
+body{
+    width: 100%;
+    height:100%;
+    margin: 0;
+} 
+.bg{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-image:url("file:///storage/emulated/0/Pictures/Browser/333f3465-0957-491a-aee8-837faf681b15.jpg");
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+ul{
+list-style-type:none;
+margin:0px;
+padding:0px;
+overflow:hidden;
+background-color:rgba(255,255,255,.5);
+position:fixed;
+top: 0;
+width:100%;
+}
+li{
+float:left;
+}
+li a{
+display:block;
+color:black;
+text-align:center;
+padding:3vh 30px;
+text-decoration:none;
+}
+li a:hover:not(.active){
+background-color:rgba(17,105,238,.4);
+}
+.active{
+background-color:rgba(186,148,243,.4);
+}
+.main{
+position:fixed;
+margin-left:1vw;
+margin-top:14vh;
+overflow:hidden;
+background-color:rgba(255,255,255,.25) ;
+border-radius: 2px;
+width: 98%;
+height: 80%;
+z-index:99999;
+
+}
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+    perspective-origin: left;
+    transform-style: preserve-3d;
+}
+
+.line {
+    position: absolute;
+    width: 200px;
+    height: 3px;
+    border-radius: 3px;
+    /* background-color: #fff; */
+   background-image: linear-gradient(to right, var(--color), rgba(0,0,0,.06), transparent);    
+    animation: down 1s linear infinite both;
+    animation-delay: calc(var(--d) * 0.3s);
+}
+
+.line::before,
+.line::after {
+    position: absolute;
+    content: "";
+    width: inherit;
+    height: inherit;
+    background-image: inherit;
+}
+
+.line::before {
+    filter: blur(5px);
+}
+
+.line::after {
+    filter: blur(10px);
+}
+
+@keyframes down {
+    0% {
+        transform: 
+        translateY(calc(var(--z) * 60px)) 
+        translateZ(calc(var(--z) * 100px)) 
+        rotate(-45deg)
+        translateX(calc(var(--x) * 100px)) 
+        ;
+    }
+    100% {
+        transform: 
+        translateY(calc(var(--z) * 60px)) 
+        translateZ(calc(var(--z) * 100px)) 
+        rotate(-45deg)
+        translateX(calc(var(--x) * -100px)) 
+        ;
+    }
+}
+.left{
+    float:left;
+    background-color: rgba(255,255,255,.28);
+    bottom: 2px;
+    padding: 1px;
+    width:76%;
+    padding-left:1%;
+    padding-right:-1%;
+    
+   margin: 1%;
+    height:100%;
+    overflow:auto;
+    }
+.right{
+    float:left;
+    background-color: rgba(255,255,255,.28);
+    bottom: 2px;
+    padding: 1px;
+     width:17%;
+     margin:1%;
+     
+    height:100%;
+    overflow:auto;
+    }
+.card {
+background-color:rgba(0,0,0,.02);
+margin-top:1%;
+}
